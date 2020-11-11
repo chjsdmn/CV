@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;    
+        }
+        #title{
+            background-color: #999;
+            color: #ffffff;
+        }
+        h1,
+        h2{
+            padding: .8rem 1.5rem;
+        }
+        h2{
+            color:salmon;
+        }
+        section{
+            display: flex;
+        }
+        header{
+            flex: 0 0 150px;
+            padding: 2rem 0;
+            border-bottom: #ffffff 1px solid;
+            text-align: center;    
+            background-color: #ddd;
+        }
+        ul{
+            flex:5 5 auto;
+            list-style: none;
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+        li{
+            margin: .3rem 0;
+        }
+        span{
+            font-weight: 600;
+            margin-right: .3rem;
+        }
+        .skills span,
+        .education span,
+        .projects span{
+            display: block;
+            margin-bottom: .2rem;
+        }
+        #more-btn{
+            margin:1rem ;
+            padding: 1rem;
+            border-radius: 10px;
+            background-color: salmon;
+            color: #ddd;
+            border: 1px #999 solid;
+            box-shadow: 3px 3px 5px 0 #999;
+        }
+        #more{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="title">
+        <h1>Resume</h1>
+        <h2 id="name">Lucy Liu</h2>
+    </div>
+    <main>
+        <section class="cv bacisInfo">
+            <header>Bacis information</header>
+            <ul>
+                <li><span>Name </span>Lucy Liu</li>
+                <li><span>Gender </span>Female</li>
+                <li><span>Application Position </span>Front-end web developer</li>
+            </ul>
+        </section>
+        <section class="cv contactInfo">
+            <header>Contact information</header>
+            <ul>
+                <li><span>Mobil </span>99988999</li>
+                <li><span>Email </span><a href="mailto:chjsdmn@hotmail.com">chjsdmn@hotmail.com</a></li>
+                <li><span>Homepage </span><a href="https://github.com/chjsdmn" target="_blank">Github</a></li>
+            </ul>
+        </section>
+        <section class="cv skills">
+            <header>Skills</header>
+            <ul>
+                <li><span>Technical skills </span>Proficient in HTML,CSS,Javascript,PHP</li>
+                <li><span>Soft skills </span>Good communication skills, hardworking, teamplayer</li>
+            </ul>
+        </section>
+        <section class="cv education">
+            <header>Education</header>
+            <ul>
+                <li><span>Bachelor </span>IT and Informationsystems Studies at University of Sørøst Norge </li>
+                <li><span>Master </span>East Asian Linguistics Studies at University of Oslo</li>
+            </ul>
+        </section>
+        <section class="cv projects">
+            <header>Projects</header>
+            <ul>
+                <li><span>Login page</span>Login and shows searched information</li>
+                <li><span>Drinking game</span>Input "I never have a ever...", output later</li>
+                <li><span>Puzzle game</span>Puzzles</li>
+            </ul>
+        </section>
+        <button id="more-btn">Know more about me</button>
+        <section id="more">
+            <header>Hobby</header>
+            <ul>
+                <li><span>Sketching</span>A good way to feel relaxing and productive at the same time</li>
+                <li><span>Dancing</span>Dacing Queen both at home and night bars</li>
+                <li><span>Hiking</span>Sognvann to ullevålseter is my favorite route</li>
+            </ul>
+        </section>
+    </main>
+    <script>
+        alert("Thank you for your time to look at my CV. A big hug from "+document.getElementById("name").innerHTML+"!");
+        var moreBtn=document.getElementById("more-btn");
+        var more=document.getElementById("more");
+        moreBtn.onclick=function(){
+            more.style.display="flex";
+            moreBtn.style.display="none";
+        }
+    </script>
+</body>
+</html>
