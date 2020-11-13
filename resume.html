@@ -18,8 +18,16 @@
         h2{
             padding: .8rem 1.5rem;
         }
-        h2{
+        h2 a{
+            text-decoration:none;            
             color:salmon;
+        }
+        #name{
+            display:none;
+            padding:.3rem;
+        }
+        #name:target{
+            display:block;
         }
         section{
             display: flex;
@@ -58,6 +66,7 @@
             color: #ddd;
             border: 1px #999 solid;
             box-shadow: 3px 3px 5px 0 #999;
+            cursor: pointer;
         }
         #more{
             display: none;
@@ -66,8 +75,9 @@
 </head>
 <body>
     <div id="title">
-        <h1>Resume</h1>
-        <h2 id="name">Lucy Liu</h2>
+        <h1>Resume</h1>        
+        <h2><a href="#name">Lucy Liu</a></h2>    
+        <P id="name">Thank you for your time to look at my CV. A big hug from me!</p>    
     </div>
     <main>
         <section class="cv bacisInfo">
@@ -119,7 +129,18 @@
         </section>
     </main>
     <script>
-        alert("Thank you for your time to look at my CV. A big hug from "+document.getElementById("name").innerHTML+"!");
+        let myDay=new Date();
+        let myHour=myDay.getHours();
+        let myMin=myDay.getMinutes();
+        if (myHour<12){
+            alert("good morning!");            
+        }
+        else if(12<=myHour<=17){
+            alert("good afternoon!");
+        }
+        else{
+            alert("good evening!");
+        }
         var moreBtn=document.getElementById("more-btn");
         var more=document.getElementById("more");
         moreBtn.onclick=function(){
