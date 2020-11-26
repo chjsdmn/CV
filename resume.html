@@ -29,6 +29,9 @@
         #name:target{
             display:block;
         }
+        #clock{
+            padding: .3rem;
+        }
         section{
             display: flex;
         }
@@ -73,11 +76,12 @@
         }
     </style>
 </head>
-<body>
+<body onload="startTime()">
     <div id="title">
         <h1>Resume</h1>        
         <h2><a href="#name">Lucy Liu</a></h2>    
         <P id="name">Thank you for your time to look at my CV. A big hug from me!</p>    
+        <p id="clock"></p>
     </div>
     <main>
         <section class="cv bacisInfo">
@@ -146,6 +150,28 @@
         moreBtn.onclick=function(){
             more.style.display="flex";
             moreBtn.style.display="none";
+        }
+        function startTime(){
+            var clock=document.getElementById("clock");
+            var now=new Date();
+            var y=now.getFullYear();
+            var month=now.getMonth()+1;
+            var d=now.getDate(); 
+            var h=now.getHours();
+            var m=now.getMinutes();
+            var s=now.getSeconds();
+            month=checkTime(month);
+            d=checkTime(d);
+            m=checkTime(m);
+            s=checkTime(s);
+            clock.innerHTML=y+"-"+month+"-"+d+" "+h+":"+m+":"+s;
+            setTimeout("startTime()",1000);
+        }
+        function checkTime(i){
+            if(i<10){
+                i="0"+i;
+            }
+            return i;
         }
     </script>
 </body>
