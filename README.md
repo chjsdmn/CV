@@ -1,2 +1,0 @@
-# CV
-a simple resume
